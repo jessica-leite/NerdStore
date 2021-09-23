@@ -7,7 +7,7 @@ namespace NerdStore.Core.DomainObjects
     {
         public static void ValidarSeIgual(object object1, object object2, string mensagem)
         {
-            if (!object1.Equals(object2))
+            if (object1.Equals(object2))
             {
                 throw new DomainException(mensagem);
             }
@@ -15,7 +15,7 @@ namespace NerdStore.Core.DomainObjects
 
         public static void ValidarSeDiferente(object object1, object object2, string mensagem)
         {
-            if (object1.Equals(object2))
+            if (!object1.Equals(object2))
             {
                 throw new DomainException(mensagem);
             }
@@ -104,33 +104,33 @@ namespace NerdStore.Core.DomainObjects
             }
         }
 
-        public static void ValidarSeMenorIgualMinimo(long valor, long minimo, string mensagem)
+        public static void ValidarSeMenorQue(long valor, long minimo, string mensagem)
         {
-            if (valor <= minimo)
+            if (valor < minimo)
             {
                 throw new DomainException(mensagem);
             }
         }
 
-        public static void ValidarSeMenorIgualMinimo(double valor, double minimo, string mensagem)
+        public static void ValidarSeMenorQue(double valor, double minimo, string mensagem)
         {
-            if (valor <= minimo)
+            if (valor < minimo)
             {
                 throw new DomainException(mensagem);
             }
         }
 
-        public static void ValidarSeMenorIgualMinimo(decimal valor, decimal minimo, string mensagem)
+        public static void ValidarSeMenorQue(decimal valor, decimal minimo, string mensagem)
         {
-            if (valor <= minimo)
+            if (valor < minimo)
             {
                 throw new DomainException(mensagem);
             }
         }
     
-        public static void ValidarSeMenorIgualMinimo(int valor, int minimo, string mensagem)
+        public static void ValidarSeMenorQue(int valor, int minimo, string mensagem)
         {
-            if (valor <= minimo)
+            if (valor < minimo)
             {
                 throw new DomainException(mensagem);
             }
@@ -138,7 +138,7 @@ namespace NerdStore.Core.DomainObjects
 
         public static void ValidarSeFalso(bool boolValor, string mensagem)
         {
-            if (boolValor)
+            if (!boolValor)
             {
                 throw new DomainException(mensagem);
             }
@@ -146,7 +146,7 @@ namespace NerdStore.Core.DomainObjects
 
         public static void ValidarSeVerdadeiro(bool boolValor, string mensagem)
         {
-            if (!boolValor)
+            if (boolValor)
             {
                 throw new DomainException(mensagem);
             }
